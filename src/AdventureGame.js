@@ -1,29 +1,25 @@
-/*
-Adventure Game
-This game will be a text-based game where the player will be able
-to make choices that affect the outcome of the game.
-The player will be able to choose their own path and the story will change
-based on their decisions.
-*/
+// ===========================================
+// The Dragon's Quest - Text Adventure Game
+// A progression-based learning project
+// ===========================================
 
-const readline = require("readline-sync");
+// Include readline for player input
+const readline = require('readline-sync');
 
-// Display the game title
-console.log("Welcome to the Adventure Game");
-
-// Add a welcome message
-console.log("Prepare yourself for an epic journey!");
-
-
+// Game state variables
 let playerName = "";
-
-// Get player name using readline-sync
-playerName = readline.question("What is your name, adventurer? ");
-
+let playerHealth = 100;
+let playerGold = 20;  // Starting gold
+let currentLocation = "village";
+let gameRunning = true;
 let inventory = [];
-// Create variables for player stats
-let health = 100;
-let gold = 0;
 
-// Display welcome message and starting stats
-console.log(`Welcome, ${playerName}! Your journey begins now.`);
+console.log("=================================");
+console.log("       The Dragon's Quest        ");
+console.log("=================================");
+console.log("\nYour quest: Defeat the dragon in the mountains!");
+
+// Get player's name
+playerName = readline.question("\nWhat is your name, brave adventurer? ");
+console.log("\nWelcome, " + playerName + "!");
+console.log("You start with " + playerGold + " gold.");
